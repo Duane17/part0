@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant U as User
+    participant B as Browser
+    participant S as Server
+
+    U->>B: Type note and click Save
+    Note right of B: User types note and initiates save
+    B->>B: Execute JavaScript (collect data)
+    B->>S: POST https://studies.cs.helsinki.fi/exampleapp/notes (send data)
+    S->>S: Process data (create note)
+    S-->>B: Response (note created)
+    B->>B: Update UI (show new note)
